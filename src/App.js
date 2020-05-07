@@ -7,18 +7,23 @@ import todosData from './todosData'
 class App extends Component {
  state = { todos: todosData}
  
- handleChange = (e) => {
+ handleChange = (id) => {
    let todos = [...this.state.todos]
 
+   todos.map(todo => {
+     if(todo.id === id){
+       todo.completed = !todo.completed
+     }
+     return todo
+   })
    this.setState({
      todos
    })
 
-
  }
   
   render() {
-    const todos = this.state.todos.map(todo => <TodoItem changed={this.handleChange} id={todo.id} key={todo.id} text={todo.text} completed={todo.completed}/>)
+    const todos = this.state.todos.map(todo => <TodoItem changed={this.handleChange} key={todo.id} todo={todo}/>)
 
     return (
       <div className="todo-list">
