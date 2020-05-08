@@ -34,3 +34,13 @@ class App extends Component {
 }
 
 export default App;
+
+
+// https://jsonplaceholder.typicode.com/todos
+ //the todo api like below!
+//  {
+//   "userId": 10,
+//   "id": 192,
+//   "title": "ut quas possimus exercitationem sint voluptates",
+//   "completed": false
+// },
